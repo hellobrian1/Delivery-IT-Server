@@ -11,6 +11,15 @@ const UserDataSchema = new mongoose.Schema({
         trim: true,
     },
 
+    phoneNumber: {
+        type: String,
+        maxLength: [20, 'phone number cannot be longer than 20 characters']
+    },
+    username: {
+        type: String,
+        required: [true, '']
+    }
+
 });
 
 module.exports = mongoose.model('UserData', UserDataSchema)
